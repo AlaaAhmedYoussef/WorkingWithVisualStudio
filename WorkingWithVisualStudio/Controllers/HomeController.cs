@@ -17,14 +17,19 @@ namespace WorkingWithVisualStudio.Controllers
        .Where(p => p?.Price < 50));
        
        */
-        SimpleRepository Repository = SimpleRepository.SharedRepository;
+        //SimpleRepository Repository = SimpleRepository.SharedRepository;
+        public IRepository Repository = SimpleRepository.SharedRepository;
 
+        /*
         public IActionResult Index() => View(Repository.Products
         .Where(p => p?.Price < 50));
+        */
+
+        public IActionResult Index() => View(Repository.Products);
 
         [HttpGet]
         public IActionResult AddProduct() => View(new Product());
-        
+
         [HttpPost]
         public IActionResult AddProduct(Product p)
         {

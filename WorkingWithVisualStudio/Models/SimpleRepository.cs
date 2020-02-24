@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace WorkingWithVisualStudio.Models
 {
-    public class SimpleRepository
+    public class SimpleRepository : IRepository
     {
         public SimpleRepository()
         {
@@ -30,5 +30,5 @@ namespace WorkingWithVisualStudio.Models
         public IEnumerable<Product> Products => products.Values;
         public void AddProduct(Product p) => products.Add(p.Name, p);
     }
-    }
+}
 
